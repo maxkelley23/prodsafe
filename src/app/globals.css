@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark security-focused theme - primary colors */
+  --background: #0f1419;
+  --foreground: #e6e6e6;
+
+  /* Security status colors */
+  --security-safe: #00d4aa;
+  --security-warning: #ffb84d;
+  --security-danger: #ff6b6b;
+  --security-critical: #ff4757;
+
+  /* UI colors */
+  --card-bg: #1a1f26;
+  --card-border: #2d3748;
+  --sidebar-bg: #161b22;
+  --nav-hover: #21262d;
+  --text-muted: #8b949e;
+  --border-color: #30363d;
+
+  /* Brand colors */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #06d6a0;
+  --accent-hover: #059669;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom color tokens */
+  --color-card-bg: var(--card-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-nav-hover: var(--nav-hover);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border-color);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-security-safe: var(--security-safe);
+  --color-security-warning: var(--security-warning);
+  --color-security-danger: var(--security-danger);
+  --color-security-critical: var(--security-critical);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Security status indicators */
+.status-safe { color: var(--security-safe); }
+.status-warning { color: var(--security-warning); }
+.status-danger { color: var(--security-danger); }
+.status-critical { color: var(--security-critical); }
+
+/* Utility classes for consistent spacing */
+.page-container {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+
+.nav-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-item:hover {
+  background: var(--nav-hover);
+}
